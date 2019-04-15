@@ -1,0 +1,17 @@
+import java.until.ArrayList;
+import java.until.List;
+
+public class ListSample{
+
+	public static void main(String[] args){
+		java.util.List<String> list=new ArrayList<String>();
+
+	list.add("");
+
+
+
+
+
+
+	}
+}
