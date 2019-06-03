@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="パッケージ名 &apos;com.internousdev.webprojaction&apos; を &apos;com.internousdev.webproj.action&apos; に変更します&#x0D;&#x0A;- 元のプロジェクト: &apos;WebProj&apos;&#x0D;&#x0A;- オリジナル要素: &apos;WebProj/src/com.internousdev.webprojaction&apos;&#x0D;&#x0A;- 名前変更済み要素: &apos;WebProj/src/com.internousdev.webproj.action&apos;&#x0D;&#x0A;- リファクタリングされた要素の参照を更新&#x0D;&#x0A;- コメントおよびストリング内のテキスト出現箇所の更新" description="パッケージ名 &apos;com.internousdev.webprojaction&apos; を変更します" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.internousdev.webprojaction" name="com.internousdev.webproj.action" qualified="false" references="true" stamp="1559564505782" textual="false" version="1.0"/>
+</session>
