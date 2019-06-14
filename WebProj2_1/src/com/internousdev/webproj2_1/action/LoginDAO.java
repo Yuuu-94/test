@@ -1,11 +1,12 @@
 package com.internousdev.webproj2_1.action;
 
-import java.sql.PrepareStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.internousdev.webproj2_1.util.DBConnector;
-import com.mysql.jdbc.Connection;
+
 
 public class LoginDAO {
 	public String username;
@@ -18,7 +19,7 @@ public class LoginDAO {
 
 		String sql="select *from users where user_name=? and password=?";
 		try {
-			PrepareStatement ps=con.prepareStatement(sql);
+			PreparedStatement ps=con.prepareStatement(sql);
 			ps.setString(1,username);
 			ps.setString(2,password);
 			ResultSet rs=ps.executeQuery();
@@ -28,12 +29,12 @@ public class LoginDAO {
 				ret=true;
 			}
 		}catch(SQLException e) {
-			e.printStackTrade();
+			e.printStackTrace();
 		}
 	try {
 		con.close();
 	}catch(SQLException e) {
-		e.printStackTrade();
+		e.printStackTrace();
 	}
 	return ret;
 	}

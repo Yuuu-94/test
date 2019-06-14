@@ -7,7 +7,7 @@ public class TestAction extends ActionSupport {
 	private String username;
 	private String password;
 
-	private String execute() {
+	public String execute() {
 		String ret=ERROR;
 		TestDAO dao=new TestDAO();
 		int count=dao.insert(username,password);
@@ -22,7 +22,7 @@ public class TestAction extends ActionSupport {
 	}
 
 	public void setUsername(String username) {
-		this.name=name;
+		this.username=username;
 	}
 
 	public String getPassword() {

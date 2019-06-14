@@ -3,7 +3,7 @@ package com.internousdev.webproj2_1.action;
 import com.internousdev.webproj2_1.dao.HelloStrutsDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class HelloStrutsAction extends ActionSupport {
+public class  HelloStrutsAction extends ActionSupport {
 	public String execute(){
 		String ret=ERROR;
 		HelloStrutsDAO dao=new HelloStrutsDAO();

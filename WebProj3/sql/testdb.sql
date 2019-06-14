@@ -4,7 +4,7 @@ drop
  use testdb;
 
  create table users(
- user_id int primary ker auto_increment,
+ user_id int primary key auto_increment,
  user_name varchar(255),
  password varchar(255)
  );

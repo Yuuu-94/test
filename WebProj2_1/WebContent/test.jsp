@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta  charset="UTF-8">
@@ -11,7 +12,7 @@
 <br>
 <h1>以下のユーザーが登録されました。</h1>
 <s:property value="username"/>
-<br>.
+<br>
 <s:property value="password"/>
 </body>
 </html>

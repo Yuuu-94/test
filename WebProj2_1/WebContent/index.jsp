@@ -9,7 +9,7 @@
 <title>INDEX</title>
 </head>
 <body>
-	<s:form action="HElloStrutsAction">
+	<s:form action="HelloStrutsAction">
 		<s:submit value="HelloStruts"/>
 	</s:form>
 
