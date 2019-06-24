@@ -9,12 +9,14 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class HelloStrutsAction extends ActionSupport{
 	private List<HelloStrutsDTO> HelloStrutsDTOList=new ArrayList<HelloStrutsDTO>();
-	private String execute() {
+	public String execute() {
 		String ret=ERROR;
 		HelloStrutsDAO dao=new HelloStrutsDAO();
 
 		HelloStrutsDTOList=dao.select();
 
+		
+		//Listのなかに何か入っていればOK
 		if(HelloStrutsDTOList.size()>0) {
 			ret=SUCCESS;
 		}else {
