@@ -25,8 +25,8 @@ public class InquiryCompleteDAO{
 			while(rs.next()){
 				InquiryDTO dto=new InquiryDTO();
 				dto.setName(rs.getString("name"));
-				dto.setName(rs.getString("qtype"));
-				dto.setName(rs.getString("body"));
+				dto.setQtype(rs.getString("qtype"));
+				dto.setBody(rs.getString("body"));
 				inquiryDTOList.add(dto);
 			}
 
