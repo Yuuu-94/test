@@ -22,5 +22,13 @@ method="execute">
 <result name="success">login.jsp</result>
 <result name="error">loginError.jsp</result>
 </action>
+
+<action name="InquiryAction" class="internousdev.webproj5.action.InquiryAction" method="execute">
+<result name="succcess">inquir.jspy</result>
+</action>
+
+<action name="InquiryCompleteAction" class="com.internousdev.webproj5.action.InquiryCompleteAction" method="execute">
+<result name="success">inquiryComplete.jsp</result>
+</action>
 </package>
 </struts>
