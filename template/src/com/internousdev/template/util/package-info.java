@@ -5,4 +5,4 @@
  * @author suzukiyuka
  *
  */
-package com.internousdev.temple.util;
+package com.internousdev.template.util;

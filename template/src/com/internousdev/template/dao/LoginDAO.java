@@ -1,11 +1,11 @@
-package com.internousdev.temple.dao;
+package com.internousdev.template.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.internousdev.temple.dto.LoginDTO;
-import com.internousdev.temple.util.DBConnector;
+import com.internousdev.template.dto.LoginDTO;
+import com.internousdev.template.util.DBConnector;
 
 public class LoginDAO {
 
@@ -14,11 +14,11 @@ public class LoginDAO {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 		LoginDTO loginDTO = new LoginDTO();
-		String sql="FROM login_user_transaction where login_id=? AND login_pass=?";
+		String sql="SELECT * FROM login_user_transaction where login_id=? AND login_pass=?";
 
 		try {
 			PreparedStatement preparedStatement= connection.prepareStatement(sql);
-
+			//SQL文の？に値を挿入
 			preparedStatement.setString(1, loginUserId);
 			preparedStatement.setString(2,loginPassword);
 
@@ -30,7 +30,8 @@ public class LoginDAO {
 				loginDTO.setUserName(resultSet.getString("user_name"));
 
 				if(!(resultSet.getString("login_id").equals(null))){
-					loginDTO.setLoginFlg(true);
+					//IDをもっていれば（IDがnullじゃなければ）
+					loginDTO.setLoginFlg(true);//DTOで最初falseだったものがsetで書き換わる
 				}
 			}
 	}catch(Exception e) {

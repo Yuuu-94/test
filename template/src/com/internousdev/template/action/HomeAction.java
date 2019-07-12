@@ -1,4 +1,4 @@
-package com.internousdev.temple.action;
+package com.internousdev.template.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 

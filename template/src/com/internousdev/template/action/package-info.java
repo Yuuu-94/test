@@ -5,4 +5,4 @@
  * @author suzukiyuka
  *
  */
-package com.internousdev.temple.action;
+package com.internousdev.template.action;

@@ -5,4 +5,4 @@
  * @author suzukiyuka
  *
  */
-package com.internousdev.temple.dto;
+package com.internousdev.template.dao;

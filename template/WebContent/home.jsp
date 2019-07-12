@@ -35,7 +35,7 @@
 			border:1px solid #333;
 			}
 
-		#heder{
+		#header{
 			width:100%;
 			height:80px;
 			text-align:center;
