@@ -24,11 +24,11 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		result = ERROR;
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId,loginPassword);
-		//DAOの処理結果をDTOに格納
+		//DAOのuserinfo(id+password処理結果をDTOに格納
 		session.put("loginUser", loginDTO);//LoginUserInfo=loginUser
 
 		//Object型のLoginDTO型を元のDTO型に戻す
-		if(((LoginDTO) session.get("loginUser")).getLoginFlg()){
+		if(((LoginDTO) session.get("loginUser")).getLoginFlg()){//loginflog==trueが省略されている
 			result = SUCCESS;
 			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
 
