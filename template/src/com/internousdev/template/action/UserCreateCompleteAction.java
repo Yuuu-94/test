@@ -1,34 +1,28 @@
 package com.internousdev.template.action;
+
+import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.template.dao.UserCreateCompleteDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class UserConfirmAction extends ActionSupport implements SessionAware {
+public class UserCreateCompleteAction extends ActionSupport implements SessionAware {
 
 	private String loginUserId;
 	private String loginPassword;
 	private String userName;
-	public Map<String,Object> session;
-	private String errorMessage;
+	private Map<String,Object> session;
 
-	public String execute(){
+	public String  execute() throws SQLException{
+			UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
+			userCreateCompleteDAO.createUser(session.get("loginUserId").toString(),
+					session.get("loginPassword").toString(),
+					session.get("userName").toString());
 
-		String result=SUCCESS;
-
-		if(!(loginUserId.equals(""))
-				 && !(loginPassword.equals(""))
-				 && !(userName.equals(""))) {
-			session.put("loginUserId", loginUserId);
-			session.put("loginUserPassword", loginPassword);
-			session.put("userName", userName);
-		}else{
-			setErrorMessage("未入力の項目があります");
-			result=ERROR;
-		}
-		return result;
-
+			String result = SUCCESS;
+			return result;
 	}
 
 	public String getLoginUserId() {
@@ -37,10 +31,10 @@ public class UserConfirmAction extends ActionSupport implements SessionAware {
 
 	public void setLoginUserId(String loginUserId) {
 		this.loginUserId = loginUserId;
-	}
+		}
 
 	public String getLoginPassword() {
-		return loginPassword;
+	return loginPassword;
 	}
 
 	public void setLoginPassword(String loginPassword) {
@@ -56,7 +50,7 @@ public class UserConfirmAction extends ActionSupport implements SessionAware {
 	}
 
 	public Map<String, Object> getSession() {
-	 return session;
+		return session;
 	}
 
 	@Override
@@ -64,12 +58,5 @@ public class UserConfirmAction extends ActionSupport implements SessionAware {
 		this.session = session;
 	}
 
-	public String getErrorMessage() {
-	 return errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 }
