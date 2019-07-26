@@ -30,11 +30,15 @@
 	<result name="success">userCreateComplete.jsp</result>
 	</action>
 
-<!-- 	<action name="BuyItemAction" class="com.internousdev.template.BuyItemAction" method="execute"> -->
-<!-- 	<result name="success">buyItemConfirm.jsp</result> -->
-<!-- 	</action> -->
+	<action name="BuyItemAction" class="com.internousdev.template.action.BuyItemAction" method="execute">
+	<result name="success">buyItemConfirm.jsp</result>
+	</action>
 
-<!-- 	<action name="MyPageAction" class="com.internousdev.template.MyPageAction" method="execute"> -->
+	<action name="BuyItemConfirmAction" class="com.internousdev.template.action.BuyItemConfirmAction" method="execute">
+	<result name="success">buyItemComplete.jsp</result>
+	</action>
+
+<!-- 	<action name="MyPageAction" class="com.internousdev.template.action.MyPageAction" method="execute"> -->
 <!-- 	<result name="success">myPage.jsp</result> -->
 <!-- 	</action> -->
 	</package>
