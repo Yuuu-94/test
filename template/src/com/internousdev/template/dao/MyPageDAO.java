@@ -18,8 +18,8 @@ public class MyPageDAO {
 
 		//left join ~ ON  結合条件
 		String sql="SELECT iit.item_name, ubit.total_price, ubit.total_count, ubit.pay "
-				+ "FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit"
-				+ "ON ubit.item_transactionid = iit.id WHERE ubit.item_transaction_id =?"
+				+ "FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit "
+				+ "ON ubit.item_transaction_id = iit.id WHERE ubit.item_transaction_id =? "
 				+ "AND ubit.user_master_id = ? ORDER BY ubit.insert_date DESC";
 
 		try{
@@ -30,7 +30,7 @@ public class MyPageDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			if(resultSet.next()){
-				myPageDTO.setItemName(resultSet.getString(""));
+				myPageDTO.setItemName(resultSet.getString("item_name"));
 				myPageDTO.setTotalPrice(resultSet.getString("total_price"));
 				myPageDTO.setTotalCount(resultSet.getString("total_count"));
 				myPageDTO.setPayment(resultSet.getString("pay"));
@@ -47,7 +47,7 @@ public class MyPageDAO {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
-		String sql = "DELETE　FROM user_buy_item_transaction WHERE item_transaction_id = ? AND　user_master_id = ?";
+		String sql = "DELETE FROM user_buy_item_transaction WHERE item_transaction_id = ? AND　user_master_id = ?";
 		PreparedStatement preparedStatement;
 		int result = 0;
 
